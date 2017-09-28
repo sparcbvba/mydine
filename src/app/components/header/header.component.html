@@ -1,0 +1,9 @@
+<header>
+    <h1>My Dine</h1>
+
+    <section *ngIf="(user | async)?.uid">
+        <div class="wrapper">
+            <div class="child" *ngFor="let list of lists | async">{{list.name}}</div>
+        </div>
+    </section>
+</header>
