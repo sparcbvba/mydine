@@ -1,37 +1,7 @@
 <!-- <app-header [user]="user"></app-header> -->
 
 <section *ngIf="(user | async)?.uid">
-
-  <div class="wrapper">
-    <h1>Menu</h1>
-    <a class="menu-btn" (click)="toggleMenu()"></a>
-
-    <section class="{{getSectionClass(i)}}" (click)="goToPage(i)" *ngFor="let list of pages | async; let i = index">
-      <h1>{{list.name}}</h1>
-      <div class="row">
-        <div class="small-9 columns">
-          <input type="text" id="message" placeholder="Voeg een restaurant toe..." (keyup.enter)="Send($event.target.value, list)" [(ngModel)]="restoVal" />
-        </div>
-        <div class="small-3 columns">
-          <button (click)="Send(restoVal, list)">Toevoegen</button>
-        </div>
-      </div>
-    </section>
-  </div>
-
-
-  <!-- <div class="row">
-    <input type="text" id="message" placeholder="Voeg een restaurant toe..." (keyup.enter)="Send($event.target.value)" [(ngModel)]="restoVal" />
-    <button (click)="Send(restoVal)">Toevoegen</button>
-  </div> -->
-
-  <div>
-    <div id="details-container" class="row medium-unstack">
-      <div class="columns resto" *ngFor="let item of restos | async">
-        <i class="fa fa-cutlery" aria-hidden="true"></i> {{item.name}}
-      </div>
-    </div>
-  </div>
+  <app-pages ></app-pages>
 </section>
 
 <div class="row buttons">

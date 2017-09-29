@@ -1,0 +1,36 @@
+<div class="wrapper">
+    <div class="row">
+        <div class="small-12 columns">
+            <input type="text" id="message" placeholder="Voeg een lijst toe..." [(ngModel)]="newList" (keyup.enter)="addPage($event.target.value)"
+            />
+        </div>
+    </div>
+
+    <a class="menu-btn" (click)="toggleMenu()">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
+
+    <section class="{{getSectionClass(i)}}" (click)="goToPage(i)" *ngFor="let list of pages | async; let i = index">
+        <h1>{{list.name}}</h1>
+        <a href="#" (click)="deletePage(list.$key)" class="trash">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+        </a>
+        <div class="row">
+            <div class="small-12 columns">
+                <input type="text" id="message" placeholder="Voeg een restaurant toe..." (keyup.enter)="addResto($event.target.value)" [(ngModel)]="restoVal" />
+                    <ul id="searchResults" class="term-list" *ngIf="restos">
+                        <li *ngFor="let resto of restos | async" 
+                        [hidden]="isSearchTerm(resto.name)"
+                        (click)="addRestoToList(resto, list)">{{resto.name}}</li>
+                    </ul>
+            </div>
+        </div>
+
+        <div id="details-container" class="row medium-unstack">
+            <div class="columns resto" *ngFor="let item of list.restos | async">
+                <i class="fa fa-cutlery" aria-hidden="true"></i> {{item.name}}
+            </div>
+        </div>
+
+    </section>
+</div>
