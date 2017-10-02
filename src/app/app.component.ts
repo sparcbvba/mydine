@@ -12,7 +12,6 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
   user: Observable<firebase.User>;
   restos: any[];
-  restoVal: string = '';
 
   constructor(private authService: AuthService) {
     this.user = this.authService.getAuthState();

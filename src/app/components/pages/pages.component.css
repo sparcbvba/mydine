@@ -43,6 +43,7 @@
     border-radius: 8px 8px 0 0;
     border: 1px solid #1f252d;
     -webkit-transition: -webkit-transform 0.3s;
+    overflow: auto;
   }
   section .trash {
     position: absolute;
@@ -194,4 +195,8 @@
   
   .hidden {
     display: none;
+  }
+
+  .restos {
+    margin-top: 25px;
   }

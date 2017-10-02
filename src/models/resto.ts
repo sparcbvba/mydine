@@ -1,6 +1,5 @@
 export interface IResto {
     name: string;
-    visited: boolean;
-    created: Date;
+    created: number;
     $key?: string;
 }
