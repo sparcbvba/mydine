@@ -30,3 +30,13 @@ img {
 button {
     margin: 10px;
 }
+button.fb {
+    background: #3B5998;
+}
+button.anonymous {
+    background: #d7e1ea;
+}
+.login {
+    height: 100vh;
+    padding-top: 30%;
+}

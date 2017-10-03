@@ -11,7 +11,7 @@ html {
 
 body {
   /* background: #1f252d; */
-  background: #FFF;
+  background: #f8f6f7;
 }
 button {
     background:#008FEF;
@@ -21,4 +21,8 @@ button {
     font-size:1.2em;
     margin-bottom: 30px;
     cursor:pointer;
+}
+
+a, a:focus, a:hover {
+  color: #555 !important;
 }

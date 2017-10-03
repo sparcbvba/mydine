@@ -4,7 +4,6 @@ import { YelpService } from './../../../services/yelp.service';
 import { ILinkedResto } from './../../../models/linkedResto';
 import { IResto } from './../../../models/resto';
 import { PageService } from './page.service';
-import { FirebaseListObservable } from 'angularfire2/database';
 import { IPage } from './../../../models/pages';
 import { Component, Input } from '@angular/core';
 import * as _ from 'lodash';
@@ -17,8 +16,8 @@ import * as firebase from 'firebase/app';
 })
 export class PagesComponent {
     user: firebase.User;
-    pages: FirebaseListObservable<IPage[]>;
-    restos: FirebaseListObservable<IResto[]>;
+    pages: any;
+    restos: any;
     newList: string;
     restoVal: string;
     prettyPages: string;
@@ -26,8 +25,8 @@ export class PagesComponent {
     private types = this.pageService.getTypes();
 
     constructor(private pageService: PageService, private authService: AuthService) {
-        this.pages = this.pageService.getPages();
-        this.restos = this.pageService.getRestos();
+        this.pages = this.pageService.getPages().valueChanges();
+        this.restos = this.pageService.getRestos().valueChanges();
         this.user = this.authService.getUser();
         console.log(this.user);
     }

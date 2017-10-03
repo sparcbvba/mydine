@@ -1,1 +1,8 @@
-resto detail {{id}}
+<div class="row">
+    <div class="small-12 columns">
+        <h1 *ngIf="item">resto detail <strong>{{item.name}}</strong></h1>
+    </div>
+    <div class="columns small-12">
+        <button class="button expanded large anonymous" [routerLink]="['']">Back</button>
+    </div>
+</div>

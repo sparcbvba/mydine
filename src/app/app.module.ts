@@ -26,15 +26,10 @@ export const firebaseConfig = {
 };
 
 const appRoutes: Routes = [
-  { path: 'resto/:id',      component: RestoComponent },
+  { path: 'resto/:id', component: RestoComponent },
   {
-    path: 'lists',
-    component: PagesComponent,
-    data: { title: 'Heroes List' }
-  },
-  { path: '',
-    redirectTo: '/lists',
-    pathMatch: 'full'
+    path: '',
+    component: PagesComponent
   }
 ];
 

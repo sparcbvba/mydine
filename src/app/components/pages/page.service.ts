@@ -1,7 +1,6 @@
 import { IResto } from './../../../models/resto';
 import { IPage } from './../../../models/pages';
 import { DatabaseService } from './../../../services/database.service';
-import { FirebaseListObservable } from 'angularfire2/database';
 import { Injectable } from '@angular/core';
 
 const TYPES = {
@@ -14,11 +13,11 @@ export class PageService {
     constructor(private dbService: DatabaseService) {
     }
 
-    public getPages(): FirebaseListObservable<IPage[]> {
+    public getPages(): any {
         return this.dbService.publicList(TYPES.PAGES);
     }
 
-    public getRestos(): FirebaseListObservable<IResto[]> {
+    public getRestos(): any {
         return this.dbService.publicList(TYPES.RESTOS);
     }
 

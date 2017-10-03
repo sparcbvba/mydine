@@ -54,7 +54,7 @@
   }
   section.one {
     /* background: #f75b5b; */
-    background: #f5f5f5;
+    background: #f6f1ed;
     -webkit-transition-delay: 0s;
   }
   section.two {
@@ -167,9 +167,6 @@
   .menu-open.page-two section.four {
     -webkit-transition-delay: 0.15s;
   }
-
-
-
 
   .term-list {
     list-style: none inside;

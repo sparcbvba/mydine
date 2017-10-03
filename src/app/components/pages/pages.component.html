@@ -28,7 +28,7 @@
         <div id="details-container" class="row medium-unstack restos">
             <span>{{prettyPages}}</span>
             <div class="columns small-12" *ngFor="let item of list.restos">
-                <div class="card">
+                <div class="card" [routerLink]="['resto', item.id]">
                     <!-- <i class="fa fa-cutlery" aria-hidden="true"></i> -->
                     <img src="http://placehold.it/600x300">
                     <div class="card-section">
