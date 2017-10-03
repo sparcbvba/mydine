@@ -21,6 +21,10 @@ export class AppComponent {
     this.authService.login();
   }
 
+  signInWithFacebook() {
+    this.authService.signInWithFacebook();
+  }
+
   logout() {
     this.authService.logout();
   }

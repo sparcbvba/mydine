@@ -1,8 +1,8 @@
 <div class="wrapper">
     <div class="row">
         <div class="small-12 columns">
-            <input type="text" id="message" placeholder="Voeg een lijst toe..." [(ngModel)]="newList" (keyup.enter)="addPage($event.target.value)"
-            />
+            <span id="greeter">Hallo {{user.displayName}}</span>
+            <input type="text" id="newlist" placeholder="Voeg een lijst toe..." [(ngModel)]="newList" (keyup.enter)="addPage($event.target.value)" />
         </div>
     </div>
 

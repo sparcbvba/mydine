@@ -116,28 +116,28 @@
     cursor: pointer;
   }
   .menu-open section.one {
-    -webkit-transform: translateY(70px);
+    -webkit-transform: translateY(140px);
     -webkit-transition-delay: 0.15s;
   }
   .menu-open section.one:active {
     background: #f86a6a;
   }
   .menu-open section.two {
-    -webkit-transform: translateY(140px);
+    -webkit-transform: translateY(210px);
     -webkit-transition-delay: 0.1s;
   }
   .menu-open section.two:active {
     background: #cb4c5c;
   }
   .menu-open section.three {
-    -webkit-transform: translateY(210px);
+    -webkit-transform: translateY(280px);
     -webkit-transition-delay: 0.05s;
   }
   .menu-open section.three:active {
     background: #57396c;
   }
   .menu-open section.four {
-    -webkit-transform: translateY(280px);
+    -webkit-transform: translateY(350px);
     -webkit-transition-delay: 0s;
   }
   .menu-open section.four:active {
@@ -199,4 +199,15 @@
 
   .restos {
     margin-top: 25px;
+  }
+
+  #newlist {
+    margin: 50px 0 0 0;
+  }
+
+  #greeter {
+    position: absolute;
+    top: 19px;
+    font-size: 1.5rem;
+    left: 60px;
   }

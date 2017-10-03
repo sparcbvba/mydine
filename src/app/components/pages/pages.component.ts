@@ -1,3 +1,5 @@
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from './../../../services/auth.service';
 import { YelpService } from './../../../services/yelp.service';
 import { ILinkedResto } from './../../../models/linkedResto';
 import { IResto } from './../../../models/resto';
@@ -6,6 +8,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 import { IPage } from './../../../models/pages';
 import { Component, Input } from '@angular/core';
 import * as _ from 'lodash';
+import * as firebase from 'firebase/app';
 
 @Component({
     selector: 'app-pages',
@@ -13,6 +16,7 @@ import * as _ from 'lodash';
     styleUrls: ['./pages.component.css']
 })
 export class PagesComponent {
+    user: firebase.User;
     pages: FirebaseListObservable<IPage[]>;
     restos: FirebaseListObservable<IResto[]>;
     newList: string;
@@ -21,9 +25,11 @@ export class PagesComponent {
 
     private types = this.pageService.getTypes();
 
-    constructor(private pageService: PageService, private yelpService: YelpService) {
+    constructor(private pageService: PageService, private authService: AuthService) {
         this.pages = this.pageService.getPages();
         this.restos = this.pageService.getRestos();
+        this.user = this.authService.getUser();
+        console.log(this.user);
     }
 
     deletePage($key: string) {

@@ -1,13 +1,34 @@
 <!-- <app-header [user]="user"></app-header> -->
 
-
+<div class="row" *ngIf="!(user | async)?.uid">
+  <div class="columns small-12">
+    <h1>MyDine <small>Version 1.0.0</small></h1>
+  </div>
+</div>
 
 <section *ngIf="(user | async)?.uid">
   <router-outlet></router-outlet>
   <!-- <app-pages ></app-pages> -->
 </section>
 
-<div class="row buttons">
-  <button (click)="login()" *ngIf="!(user | async)?.uid">Login</button>
-  <!-- <button (click)="logout()" *ngIf="(user | async)?.uid">Logout</button> -->
+<div class="row">
+  <div class="columns small-12">
+    <button class="button expanded large" (click)="login()" *ngIf="!(user | async)?.uid">Login</button>
+  </div>
+  <div class="columns small-12">
+    <button class="button expanded large" (click)="signInWithFacebook()" *ngIf="!(user | async)?.uid">Facebook Login</button>
+  </div>
+  <div class="columns small-12">
+    <button class="button expanded large" (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
+  </div>
+</div>
+
+<div class="row" *ngIf="!(user | async)?.uid">
+  <div class="columns small-12">
+    <blockquote>
+      Going to a restaurant is one of my keenest pleasures. Meeting someplace with old and new friends, ordering wine, eating food,
+      surrounded by strangers, I think is the core of what it means to live a civilised life.
+      <cite>Adam Gopnik</cite>
+    </blockquote>
+  </div>
 </div>
