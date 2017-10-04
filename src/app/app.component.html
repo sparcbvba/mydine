@@ -1,36 +1,61 @@
 <!-- <app-header [user]="user"></app-header> -->
 
-<div [ngClass]="{'login': !(user | async)?.uid }">
-  <div class="row" *ngIf="!(user | async)?.uid">
-    <div class="columns small-12">
-      <h1>MyDine <small>Version 1.0.0</small></h1>
-    </div>
-  </div>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" *ngIf="(user | async)?.uid">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <section *ngIf="(user | async)?.uid">
-    <router-outlet></router-outlet>
-    <!-- <app-pages ></app-pages> -->
-  </section>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav> -->
 
-  <div class="row">
-    <div class="columns small-12">
-      <button class="button expanded large anonymous" (click)="login()" *ngIf="!(user | async)?.uid">Login</button>
+<div class="container">
+    <div class="row" *ngIf="!(user | async)?.uid">
+      <div class="col-sm-12">
+        <h1 class="display-4">MyDine</h1>
+        <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS.</p>
+      </div>
     </div>
-    <div class="columns small-12">
-      <button class="button expanded large fb" (click)="signInWithFacebook()" *ngIf="!(user | async)?.uid">Facebook Login</button>
-    </div>
-    <div class="columns small-12">
-      <button class="button expanded large anonymous" (click)="logout()" *ngIf="(user | async)?.uid">Logout</button>
-    </div>
-  </div>
 
-  <div class="row" *ngIf="!(user | async)?.uid">
-    <div class="columns small-12">
-      <blockquote>
-        Going to a restaurant is one of my keenest pleasures. Meeting someplace with old and new friends, ordering wine, eating food,
-        surrounded by strangers, I think is the core of what it means to live a civilised life.
-        <cite>Adam Gopnik</cite>
-      </blockquote>
+    <section *ngIf="(user | async)?.uid">
+      <router-outlet></router-outlet>
+      <!-- <app-pages ></app-pages> -->
+    </section>
+
+    <div class="row">
+      <div class="col-sm-6" *ngIf="!(user | async)?.uid">
+        <button type="button" class="btn btn-secondary login" (click)="login()">Login</button>
+      </div>
+      <div class="col-sm-6" *ngIf="!(user | async)?.uid">
+        <button type="button" class="btn btn-primary login" (click)="signInWithFacebook()">Facebook Login</button>
+      </div>
+      <div class="col-sm-12" *ngIf="(user | async)?.uid">
+        <button type="button" class="btn btn-secondary" (click)="logout()">Logout</button>
+      </div>
     </div>
+</div>
+
+<footer class="footer" *ngIf="!(user | async)?.uid">
+  <div class="container">
+    <span class="text-muted">footer</span>
   </div>
-  </div>
+</footer>
+
+<div class="add-button" *ngIf="(user | async)?.uid"></div>

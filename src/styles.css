@@ -1,28 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    font-family: 'Raleway';
-    -webkit-font-smoothing: antialiased;
-  }
+  font-family: 'Raleway';
+  -webkit-font-smoothing: antialiased;
+}
 
 html {
-  font-size: 62.5%;
-  font-family: 'Lato', sans-serif;
+  position: relative;
+  min-height: 100%;
 }
-
 body {
-  /* background: #1f252d; */
-  background: #f8f6f7;
-}
-button {
-    background:#008FEF;
-    color:white;
-    padding: 1.2em;
-    text-align:center;
-    font-size:1.2em;
-    margin-bottom: 30px;
-    cursor:pointer;
-}
-
-a, a:focus, a:hover {
-  color: #555 !important;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
 }
